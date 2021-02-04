@@ -16,8 +16,10 @@
                 <li v-for="product in products" class="bg-white w-10/12 mx-auto mt-2 py-2 px-2 text-gray-700 rounded shadow">
                     <span v-if="product.qty==0" class="text-xs font-bold text-red-800">Out of Stock</span>
                     <span v-else>{{product.qty}}</span> - {{product.name}}
-                    <button class="bg-green-500 ml-10 px-4 text-white rounded hover:bg-green-800" @click="product.qty++">+</button>
-                    <button v-show="product.qty>0" class="bg-red-500 ml-2 px-4 text-white rounded hover:bg-red-800" @click="product.qty--">-</button>
+                    <div style="float: right">
+                        <button class="bg-green-500 ml-10 px-4 text-white rounded hover:bg-green-800" @click="product.qty++">+</button>
+                        <button v-show="product.qty>0" class="bg-red-500 ml-2 px-4 text-white rounded hover:bg-red-800" @click="product.qty--">-</button>
+                    </div>
 
                 </li>
             </ul>
